@@ -1,0 +1,4 @@
+[run]
+source = computed_property
+omit = computed_property/tests/*
+branch = 1
