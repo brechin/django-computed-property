@@ -61,3 +61,13 @@ class TestImproperConfiguration(object):
                 foo = ComputedCharField()
         expected_error = 'ComputedCharField requires setting compute_from'
         assert expected_error == str(ex.value)
+
+
+class TestValueCoercion(object):
+    @pytest.mark.django_db
+    def test_date_time_to_date(self):
+        computed_date_time_model = models.ComputedDateFromDateTime
+        datetime_model_object = computed_date_time_model.objects.create()
+        assert isinstance(datetime_model_object.computed, date)
+        created_at_date = datetime_model_object.created_at.date()
+        assert datetime_model_object.computed == created_at_date

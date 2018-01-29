@@ -8,4 +8,17 @@ Inspired by [Google Cloud Datastore NDB Computed Properties](https://cloud.googl
 Automatically store a computed value in the database when saving your model so you can filter
 on values requiring complex (or simple!) calculations.
 
+## Quick start
+
+1. Install this library
+
+    pip install django-computed-property
+    
+1. Add to `INSTALLED_APPS`
+    
+    INSTALLED_APPS = [
+        ...,
+        'computed_property'
+    ]
+
 Documentation available at http://django-computed-property.readthedocs.io/en/latest/

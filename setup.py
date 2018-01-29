@@ -20,7 +20,7 @@ setup(
     author='Jason Brechin',
     author_email='brechinj@gmail.com',
     url='https://github.com/brechin/django-computed-property/',
-    packages=find_packages(),
+    packages=find_packages(exclude=["*.tests", "*.tests.*"]),
     install_requires=['Django>=1.8.2', 'six==1.11.0'],
     classifiers=[
         'Environment :: Web Environment',

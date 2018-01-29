@@ -30,7 +30,14 @@ Installation
 Usage
 -----
 
-Just import and use the included field classes in your models::
+Add computed_property to your list of `INSTALLED_APPS` in `settings.py`::
+
+    INSTALLED_APPS = [
+        ...
+        'computed_property'
+    ]
+
+Then, simply import and use the included field classes in your models::
 
     from django.db import models
     from computed_property import ComputedTextField
@@ -46,6 +53,9 @@ Just import and use the included field classes in your models::
 You can read values from the ``name`` field as usual, but you may not set the field's value.
 When the field is accessed and when a model instance is saved, it will compute the field's value
 using the provided callable (function/lambda), property name, or attribute name.
+
+`compute_from` can be a reference to a function that takes a single argument (an instance of the model), or
+a string referring to a field, property, or other attribute on the instance.
 
 
 Field types

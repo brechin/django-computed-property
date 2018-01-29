@@ -55,13 +55,14 @@ class ComputedField(models.Field):
 
     def calculate_value(self, instance):
         if callable(self.compute_from):
-            return self.compute_from(instance)
+            value = self.compute_from(instance)
         else:
             instance_compute_object = getattr(instance, self.compute_from)
             if callable(instance_compute_object):
-                return instance_compute_object()
+                value = instance_compute_object()
             else:
-                return instance_compute_object
+                value = instance_compute_object
+        return self.to_python(value)
 
     def deconstruct(self):
         name, path, args, kwargs = super(ComputedField, self).deconstruct()

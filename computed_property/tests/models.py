@@ -58,6 +58,13 @@ class ComputedDate(models.Model):
     base_value = models.DateField()
 
 
+class ComputedDateFromDateTime(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    computed = fields.ComputedDateField(
+        compute_from='created_at'
+    )
+
+
 class ComputedDateTime(models.Model):
     computed = fields.ComputedDateTimeField(
         compute_from=lambda self: self.base_value + datetime.timedelta(days=1)
