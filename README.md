@@ -12,13 +12,31 @@ on values requiring complex (or simple!) calculations.
 
 1. Install this library
 
+    ```
     pip install django-computed-property
+    ```
     
 1. Add to `INSTALLED_APPS`
     
+    ```python
     INSTALLED_APPS = [
         ...,
         'computed_property'
     ]
+    ```
+
+1. Add a computed field to your model(s)
+
+    ```python
+    from django.db import models
+    import computed_property
+ 
+    class MyModel(models.model):
+        doubled = computed_property.ComputedIntegerField(compute_from='double_it')
+        base = models.IntegerField()
+     
+        def double_it(self):
+            return self.base * 2
+    ```
 
 Documentation available at http://django-computed-property.readthedocs.io/en/latest/

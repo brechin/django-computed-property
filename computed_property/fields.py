@@ -5,13 +5,20 @@ from django.db import models
 from django.db.models.signals import pre_save
 
 __all__ = [
-    'ComputedField',
-    'ComputedTextField',
+    'ComputedBooleanField',
     'ComputedCharField',
-    'ComputedEmailField',
-    'ComputedIntegerField',
     'ComputedDateField',
     'ComputedDateTimeField',
+    'ComputedDecimalField',
+    'ComputedEmailField',
+    'ComputedField',
+    'ComputedFloatField',
+    'ComputedIntegerField',
+    'ComputedPositiveIntegerField',
+    'ComputedPositiveSmallIntegerField',
+    'ComputedSmallIntegerField',
+    'ComputedTextField',
+    'ComputedTimeField',
 ]
 
 
@@ -41,11 +48,12 @@ class ComputedField(models.Field):
             pass
 
     def contribute_to_class(self, cls, name, **kwargs):
+        """Add field to class using ObjectProxy so that
+        calculate_value can access the model instance."""
         self.set_attributes_from_name(name)
         cls._meta.add_field(self)
         self.model = cls
         setattr(cls, name, ComputedField.ObjectProxy(self))
-        # super(ComputedField, self).contribute_to_class(cls, name)
         pre_save.connect(self.resolve_computed_field, sender=cls)
 
     def resolve_computed_field(self, sender, instance, raw, **kwargs):
@@ -54,6 +62,11 @@ class ComputedField(models.Field):
         return self.calculate_value(instance)
 
     def calculate_value(self, instance):
+        """
+        Retrieve or call function to obtain value for this field.
+        Args:
+            instance: Parent model instance to reference
+        """
         if callable(self.compute_from):
             value = self.compute_from(instance)
         else:
@@ -76,19 +89,11 @@ class ComputedField(models.Field):
         return super(ComputedField, self).get_prep_value(value)
 
 
-class ComputedTextField(ComputedField, models.TextField):
+class ComputedBooleanField(ComputedField, models.BooleanField):
     pass
 
 
 class ComputedCharField(ComputedField, models.CharField):
-    pass
-
-
-class ComputedEmailField(ComputedField, models.EmailField):
-    pass
-
-
-class ComputedIntegerField(ComputedField, models.IntegerField):
     pass
 
 
@@ -97,4 +102,41 @@ class ComputedDateField(ComputedField, models.DateField):
 
 
 class ComputedDateTimeField(ComputedField, models.DateTimeField):
+    pass
+
+
+class ComputedDecimalField(ComputedField, models.DecimalField):
+    pass
+
+
+class ComputedEmailField(ComputedField, models.EmailField):
+    pass
+
+
+class ComputedFloatField(ComputedField, models.FloatField):
+    pass
+
+
+class ComputedIntegerField(ComputedField, models.IntegerField):
+    pass
+
+
+class ComputedPositiveIntegerField(ComputedField, models.PositiveIntegerField):
+    pass
+
+
+class ComputedPositiveSmallIntegerField(ComputedField,
+                                        models.PositiveSmallIntegerField):
+    pass
+
+
+class ComputedSmallIntegerField(ComputedField, models.SmallIntegerField):
+    pass
+
+
+class ComputedTextField(ComputedField, models.TextField):
+    pass
+
+
+class ComputedTimeField(ComputedField, models.TimeField):
     pass

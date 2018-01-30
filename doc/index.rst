@@ -62,11 +62,11 @@ Field types
 ~~~~~~~~~~~
 
 Several other field classes are included: ``ComputedCharField``,
-``ComputedEmailField``, ``ComputedIntegerField``, ``ComputedDateField``, and
-``ComputedDateTimeField``. All field classes accept the same arguments as
+``ComputedEmailField``, ``ComputedIntegerField``, ``ComputedDateField``,
+``ComputedDateTimeField``, and others. All field classes accept the same arguments as
 their non-Computed versions.
 
-To create an Computed version of some other custom field class, inherit from
+To create an Computed version of some other field class, inherit from
 both ``ComputedField`` and the other field class::
 
     from computed_property import ComputedField
