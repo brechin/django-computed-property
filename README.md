@@ -31,7 +31,7 @@ on values requiring complex (or simple!) calculations.
     from django.db import models
     import computed_property
  
-    class MyModel(models.model):
+    class MyModel(models.Model):
         doubled = computed_property.ComputedIntegerField(compute_from='double_it')
         base = models.IntegerField()
      
