@@ -2,6 +2,8 @@
 
 ### latest
 
+### 0.2.2 [2018-09-21]
+- Drop Python 3.3 testing/support
 
 ### 0.2.1  [2018-01-29]
 - Add other field types
