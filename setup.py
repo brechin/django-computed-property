@@ -17,6 +17,7 @@ setup(
     version=get_version(),
     description="Computed property model fields for Django",
     long_description=long_description,
+    license='MIT',
     author='Jason Brechin',
     author_email='brechinj@gmail.com',
     url='https://github.com/brechin/django-computed-property/',
@@ -25,7 +26,7 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        # 'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
