@@ -9,8 +9,8 @@ Computed Property fields for Django models, inspired by `Google Cloud NDB`_
 Prerequisites
 -------------
 
-``django-computed-property`` supports `Django`_ 1.8 - 2.0 on Python 2.7,
-3.4, 3.5, 3.6, pypy, and pypy3.
+``django-computed-property`` supports (i.e. is tested on) `Django`_ 1.8 - 2.1 on Python 2.7,
+3.4, 3.5, 3.6, 3.7, pypy, and pypy3.
 
 Only SQLite is tested, but any Django database backend should work.
 
