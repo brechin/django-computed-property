@@ -2,6 +2,9 @@
 
 ### latest
 
+### 0.2.3 [2018-11-29]
+- Add Python 3.7 testing
+
 ### 0.2.2 [2018-09-21]
 - Drop Python 3.3 testing/support
 
