@@ -9,10 +9,10 @@ Computed Property fields for Django models, inspired by `Google Cloud NDB`_
 Prerequisites
 -------------
 
-``django-computed-property`` supports (i.e. is tested on) `Django`_ 1.8 - 2.1 on Python 2.7,
+``django-computed-property`` supports (i.e. is tested on) `Django`_ 1.8 - 2.2 and trunk on Python 2.7,
 3.4, 3.5, 3.6, 3.7, pypy, and pypy3.
 
-Only SQLite is tested, but any Django database backend should work.
+SQLite and Postgres are currently tested, but any Django database backend should work.
 
 .. _Django: http://www.djangoproject.com/
 
@@ -56,6 +56,19 @@ using the provided callable (function/lambda), property name, or attribute name.
 
 `compute_from` can be a reference to a function that takes a single argument (an instance of the model), or
 a string referring to a field, property, or other attribute on the instance.
+
+
+.. note::
+
+    It is important to note that your computed field data will not immediately be written to the database.
+    You must (re-)save all instances of your data to have the computed fields populated in the database. Until
+    you do so, you will be able to access those fields when you load an instance of the model, but
+    you will not benefit from their queryability.
+
+    One way you could do this is in a data migration, using something like::
+
+        for instance in MyModel.objects.all().iterator():
+            instance.save()
 
 
 Field types
