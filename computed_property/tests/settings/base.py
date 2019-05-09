@@ -1,5 +1,6 @@
 import os
 
+
 INSTALLED_APPS = [
     'computed_property.tests',
 ]
