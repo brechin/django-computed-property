@@ -8,7 +8,7 @@ DB = os.path.join(HERE, 'testdb.mysql_innodb')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_computed_property{}'.format(db_suffix),
+        'NAME': 'django_computed_property{}'.format(db_suffix),  # noqa
         'HOST': '127.0.0.1',
         'PORT': 12345,
         'USER': 'root',
