@@ -2,6 +2,11 @@
 
 ### latest
 
+### 0.2.4 [2019-05-09]
+- Add additional Python and Django versions to tests
+- Add Postgres to tested database backends
+- Update docs with note on usage
+
 ### 0.2.3 [2018-11-29]
 - Add Python 3.7 testing
 
