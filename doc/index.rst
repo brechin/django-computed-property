@@ -60,15 +60,15 @@ a string referring to a field, property, or other attribute on the instance.
 
 .. note::
 
-  It is important to note that your computed field data will not immediately be written to the database.
-  You must (re-)save all instances of your data to have the computed fields populated in the database. Until
-  you do so, you will be able to access those fields when you load an instance of the model, but
-  you will not benefit from their queryability.
+    It is important to note that your computed field data will not immediately be written to the database.
+    You must (re-)save all instances of your data to have the computed fields populated in the database. Until
+    you do so, you will be able to access those fields when you load an instance of the model, but
+    you will not benefit from their queryability.
 
-  One way you could do this is in a data migration, using something like:
+    One way you could do this is in a data migration, using something like::
 
-    for instance in MyModel.objects.all().iterator():
-        instance.save()
+        for instance in MyModel.objects.all().iterator():
+            instance.save()
 
 
 Field types
