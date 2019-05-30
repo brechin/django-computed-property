@@ -94,4 +94,4 @@ Contributing
 
 See the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/django-computed-property/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/brechin/django-computed-property/blob/master/CONTRIBUTING.rst
