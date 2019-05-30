@@ -92,6 +92,26 @@ both ``ComputedField`` and the other field class::
 Contributing
 ------------
 
-See the `contributing docs`_.
+End Users please see the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/django-computed-property/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/brechin/django-computed-property/blob/master/CONTRIBUTING.rst
+
+On top of the above, developers please consider the following:
+
+Reporting Issues or Suggestions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you see an issue with the library or have a request for new functionality, please file an issue in GitHub.
+
+Please include specifics about which version of Python you're using, as well as which version of the django-computed-property library you're using.
+
+Whenever possible, include a code sample that demonstrates the issue you're seeing or the desired developer experience.
+
+Adding Test Cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The complete test suite is run using ``tox``.  This is how tests are run on Travis-CI, it includes all
+supported Python versions, all supported databases back ends, and all supported Django versions.  Arguably
+not what you would want to do, each time you add a test case, or make a minor change.
+
+To run the test suite in just one version of Python, against sqlite3, and using one chosen Django version, you … ?
