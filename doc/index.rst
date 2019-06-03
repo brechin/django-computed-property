@@ -92,7 +92,7 @@ both ``ComputedField`` and the other field class::
 Contributing
 ------------
 
-End Users please see the `contributing docs`_.
+Please also refer to the `contributing docs`_ in the repository.
 
 .. _contributing docs: https://github.com/brechin/django-computed-property/blob/master/CONTRIBUTING.rst
 
