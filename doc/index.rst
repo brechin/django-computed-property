@@ -111,7 +111,19 @@ Adding Test Cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The complete test suite is run using ``tox``.  This is how tests are run on Travis-CI, it includes all
-supported Python versions, all supported databases back ends, and all supported Django versions.  Arguably
-not what you would want to do, each time you add a test case, or make a minor change.
+supported Python versions, all supported databases back ends, and all supported Django versions.
+Arguably not what you would want to do, each time you add a test case, or make a minor change.
 
-To run the test suite in just one version of Python, against sqlite3, and using one chosen Django version, you … ?
+To run the test suite in just one version of Python, against sqlite3, and using one chosen Django
+version, you still use ``tox``, instructing it to just test that single configuration combination.
+
+You can enumerate all the build configurations with ``tox -l``. From that list, you can choose the
+combination of python-django-database (or the ``py37-docs`` or ``py37-flake8`` builds) to run.
+
+For example::
+
+  $ tox -e py37-django111-sqlite
+
+Tox generally just requires that the version of python you're testing against is installed on your
+system. It will take care of creating the test environment from the configuration information in
+``tox.ini``.
