@@ -2,6 +2,10 @@
 
 ### latest
 
+### 0.3 [2019-07-28]
+- Update six dependency to >= 1.11
+- Refactor Travis/tox configuration
+
 ### 0.2.4 [2019-05-09]
 - Add additional Python and Django versions to tests
 - Add Postgres to tested database backends
