@@ -5,89 +5,89 @@ cache: pip
 matrix:
   include:
     - python: 2.7
-      env: TOXENV=flake8
+      env: TOXENV=py27-flake8
     - python: 3.7
-      env: TOXENV=flake8
+      env: TOXENV=py37-flake8
 
     - python: 2.7
-      env: TOXENV=py27-django18-sqlite,py27-django18-sqlite_file,py27-django18-postgres,coverage
+      env: TOXENV=py27-django18-sqlite,py27-django18-sqlite_file,py27-django18-postgres,py27-coverage
     - python: 2.7
-      env: TOXENV=py27-django19-sqlite,py27-django19-sqlite_file,py27-django19-postgres,coverage
+      env: TOXENV=py27-django19-sqlite,py27-django19-sqlite_file,py27-django19-postgres,py27-coverage
     - python: 2.7
-      env: TOXENV=py27-django110-sqlite,py27-django110-sqlite_file,py27-django110-postgres,coverage
+      env: TOXENV=py27-django110-sqlite,py27-django110-sqlite_file,py27-django110-postgres,py27-coverage
     - python: 2.7
-      env: TOXENV=py27-django111-sqlite,py27-django111-sqlite_file,py27-django111-postgres,coverage
+      env: TOXENV=py27-django111-sqlite,py27-django111-sqlite_file,py27-django111-postgres,py27-coverage
 
     - python: pypy
-      env: TOXENV=pypy-django18-sqlite,pypy-django18-sqlite_file,pypy-django18-postgres,coverage
+      env: TOXENV=pypy-django18-sqlite,pypy-django18-sqlite_file,pypy-django18-postgres
     - python: pypy
-      env: TOXENV=pypy-django19-sqlite,pypy-django19-sqlite_file,pypy-django19-postgres,coverage
+      env: TOXENV=pypy-django19-sqlite,pypy-django19-sqlite_file,pypy-django19-postgres
     - python: pypy
-      env: TOXENV=pypy-django110-sqlite,pypy-django110-sqlite_file,pypy-django110-postgres,coverage
+      env: TOXENV=pypy-django110-sqlite,pypy-django110-sqlite_file,pypy-django110-postgres
     - python: pypy
-      env: TOXENV=pypy-django111-sqlite,pypy-django111-sqlite_file,pypy-django111-postgres,coverage
+      env: TOXENV=pypy-django111-sqlite,pypy-django111-sqlite_file,pypy-django111-postgres
 
     - python: 3.4
-      env: TOXENV=py34-django18-sqlite,py34-django18-sqlite_file,py34-django18-postgres,coverage
+      env: TOXENV=py34-django18-sqlite,py34-django18-sqlite_file,py34-django18-postgres
     - python: 3.4
-      env: TOXENV=py34-django19-sqlite,py34-django19-sqlite_file,py34-django19-postgres,coverage
+      env: TOXENV=py34-django19-sqlite,py34-django19-sqlite_file,py34-django19-postgres
     - python: 3.4
-      env: TOXENV=py34-django110-sqlite,py34-django110-sqlite_file,py34-django110-postgres,coverage
+      env: TOXENV=py34-django110-sqlite,py34-django110-sqlite_file,py34-django110-postgres
     - python: 3.4
-      env: TOXENV=py34-django111-sqlite,py34-django111-sqlite_file,py34-django111-postgres,coverage
+      env: TOXENV=py34-django111-sqlite,py34-django111-sqlite_file,py34-django111-postgres
     - python: 3.4
-      env: TOXENV=py34-django20-sqlite,py34-django20-sqlite_file,py34-django20-postgres,coverage
+      env: TOXENV=py34-django20-sqlite,py34-django20-sqlite_file,py34-django20-postgres
 
     - python: 3.5
-      env: TOXENV=py35-django18-sqlite,py35-django18-sqlite_file,py35-django18-postgres,coverage
+      env: TOXENV=py35-django18-sqlite,py35-django18-sqlite_file,py35-django18-postgres
     - python: 3.5
-      env: TOXENV=py35-django19-sqlite,py35-django19-sqlite_file,py35-django19-postgres,coverage
+      env: TOXENV=py35-django19-sqlite,py35-django19-sqlite_file,py35-django19-postgres
     - python: 3.5
-      env: TOXENV=py35-django110-sqlite,py35-django110-sqlite_file,py35-django110-postgres,coverage
+      env: TOXENV=py35-django110-sqlite,py35-django110-sqlite_file,py35-django110-postgres
     - python: 3.5
-      env: TOXENV=py35-django111-sqlite,py35-django111-sqlite_file,py35-django111-postgres,coverage
+      env: TOXENV=py35-django111-sqlite,py35-django111-sqlite_file,py35-django111-postgres
     - python: 3.5
-      env: TOXENV=py35-django20-sqlite,py35-django20-sqlite_file,py35-django20-postgres,coverage
+      env: TOXENV=py35-django20-sqlite,py35-django20-sqlite_file,py35-django20-postgres
     - python: 3.5
-      env: TOXENV=py35-django21-sqlite,py35-django21-sqlite_file,py35-django21-postgres,coverage
+      env: TOXENV=py35-django21-sqlite,py35-django21-sqlite_file,py35-django21-postgres
     - python: 3.5
-      env: TOXENV=py35-django22-sqlite,py35-django22-sqlite_file,py35-django22-postgres,coverage
+      env: TOXENV=py35-django22-sqlite,py35-django22-sqlite_file,py35-django22-postgres
 
     - python: 3.6
-      env: TOXENV=py36-django111-sqlite,py36-django111-sqlite_file,py36-django111-postgres,coverage
+      env: TOXENV=py36-django111-sqlite,py36-django111-sqlite_file,py36-django111-postgres
     - python: 3.6
-      env: TOXENV=py36-django20-sqlite,py36-django20-sqlite_file,py36-django20-postgres,coverage
+      env: TOXENV=py36-django20-sqlite,py36-django20-sqlite_file,py36-django20-postgres
     - python: 3.6
-      env: TOXENV=py36-django21-sqlite,py36-django21-sqlite_file,py36-django21-postgres,coverage
+      env: TOXENV=py36-django21-sqlite,py36-django21-sqlite_file,py36-django21-postgres
     - python: 3.6
-      env: TOXENV=py36-django22-sqlite,py36-django22-sqlite_file,py36-django22-postgres,coverage
+      env: TOXENV=py36-django22-sqlite,py36-django22-sqlite_file,py36-django22-postgres
     - python: 3.6
-      env: TOXENV=py36-djangotrunk-sqlite,py36-django22-sqlite_file,py36-django22-postgres,coverage
+      env: TOXENV=py36-djangotrunk-sqlite,py36-django22-sqlite_file,py36-django22-postgres
 
     - python: 3.7
-      env: TOXENV=py37-django111-sqlite,py37-django111-sqlite_file,py37-django111-postgres,coverage
+      env: TOXENV=py37-django111-sqlite,py37-django111-sqlite_file,py37-django111-postgres,py37-coverage
     - python: 3.7
-      env: TOXENV=py37-django20-sqlite,py37-django20-sqlite_file,py37-django20-postgres,coverage
+      env: TOXENV=py37-django20-sqlite,py37-django20-sqlite_file,py37-django20-postgres,py37-coverage
     - python: 3.7
-      env: TOXENV=py37-django21-sqlite,py37-django21-sqlite_file,py37-django21-postgres,coverage
+      env: TOXENV=py37-django21-sqlite,py37-django21-sqlite_file,py37-django21-postgres,py37-coverage
     - python: 3.7
-      env: TOXENV=py37-django22-sqlite,py37-django22-sqlite_file,py37-django22-postgres,coverage
+      env: TOXENV=py37-django22-sqlite,py37-django22-sqlite_file,py37-django22-postgres,py37-coverage
     - python: 3.7
-      env: TOXENV=py37-djangotrunk-sqlite,py37-django22-sqlite_file,py37-django22-postgres,coverage
+      env: TOXENV=py37-djangotrunk-sqlite,py37-django22-sqlite_file,py37-django22-postgres,py37-coverage
 
     - python: pypy3
-      env: TOXENV=pypy3-django111-sqlite,pypy3-django111-sqlite_file,pypy3-django111-postgres,coverage
+      env: TOXENV=pypy3-django111-sqlite,pypy3-django111-sqlite_file,pypy3-django111-postgres
     - python: pypy3
-      env: TOXENV=pypy3-django20-sqlite,pypy3-django20-sqlite_file,pypy3-django20-postgres,coverage
+      env: TOXENV=pypy3-django20-sqlite,pypy3-django20-sqlite_file,pypy3-django20-postgres
     - python: pypy3
-      env: TOXENV=pypy3-django21-sqlite,pypy3-django21-sqlite_file,pypy3-django21-postgres,coverage
+      env: TOXENV=pypy3-django21-sqlite,pypy3-django21-sqlite_file,pypy3-django21-postgres
     - python: pypy3
-      env: TOXENV=pypy3-django22-sqlite,pypy3-django22-sqlite_file,pypy3-django22-postgres,coverage
+      env: TOXENV=pypy3-django22-sqlite,pypy3-django22-sqlite_file,pypy3-django22-postgres
     - python: pypy3
-      env: TOXENV=pypy3-djangotrunk-sqlite,pypy3-django22-sqlite_file,pypy3-django22-postgres,coverage
+      env: TOXENV=pypy3-djangotrunk-sqlite,pypy3-django22-sqlite_file,pypy3-django22-postgres
 
     - python: 3.7
-      env: TOXENV=docs
+      env: TOXENV=py37-docs
 
 
 services:
